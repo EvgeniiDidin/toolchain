@@ -41,7 +41,19 @@ for url in ${urls} ; do
             if [ ! -f "${filename}" ]; then
                 $WGET "${url}"
             fi
-            tar xf "${filename}"
+
+            # Decompress .xz
+            if [ "${filename##*.}" = "xz" ]; then
+                unxz "${filename}"
+            fi
+
+            # Decompress .gz
+            if [ "${filename##*.}" = "gz" ]; then
+                gunzip "${filename}"
+            fi
+
+            # Finally extract tarball
+            tar xf "${filename%.*}"
         fi
         mv "${dirname}" "${toolname}"
     fi
