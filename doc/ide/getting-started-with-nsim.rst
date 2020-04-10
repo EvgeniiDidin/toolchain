@@ -124,7 +124,7 @@ Select **nSIM** in the **ARC GDB Server** droplist.
 
 In this tab you should specify paths to nSIM executable and to a TCF file.
 nSIM has several TCF file templates in the folder ``../etc/tcf/templates`` relative
-to nSIM executable file. Choose `em6_dmips.tcf` file from templates. Then uncheck
+to nSIM executable file. Choose `hs38_base.tcf` file from templates. Then uncheck
 **Use nSIM properties file?** checkbox and click **Apply** button.
 
 If you choose big endian toolchain, then you need to change .tcf file
